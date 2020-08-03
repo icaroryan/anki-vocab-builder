@@ -2,7 +2,12 @@
 
 <html lang="en">
     <head>
-        <link href="/static/favicon.ico" rel="icon">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="/static/img/favicon.ico" rel="icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"
 
         <!-- https://v5.getbootstrap.com/docs/5.0/getting-started/introduction/ -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -12,10 +17,20 @@
 
     <body>
         
+        <main>
+            {% block main%}{% endblock %}
+        </main>
 
+        
         <footer class="small text-center text-muted">
             <p>Author: Icaro Ryan<br>
             <a href="mailto:icaroryan3@gmail.com" class="link-info">icaroryan3@gmail.com</a></p>
         </footer>
+
+        <!-- Java Script -->
+        <script src="{{ url_for('static', filename='js/app.js')}}"></script>
+        <!-- Popper.js first, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     </body>
 </html>
