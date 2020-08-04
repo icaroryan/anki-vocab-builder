@@ -5,6 +5,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Icaro Ryan">
+        <meta name="keywords" content="Icaro Ryan, Dictionary, English, Anki, Anki Vocabulary Builder, search">
+        <meta name="description" content="All-in-one Dictionary">
 
         <link href="/static/img/favicon.ico" rel="icon">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"
@@ -16,7 +19,14 @@
     </head>
 
     <body>
-        
+        <nav class="navbar navbar-dark bg-primary" style="background-color: #6610f2">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="margin: -12px">
+                    <img src="{{ url_for('static', filename='img/favicon.png') }}" width="50" height="50" alt="Anki Vocabulary Builder" loading="lazy">
+                </a>
+              </div>
+        </nav>
+
         <main>
             {% block main%}{% endblock %}
         </main>
