@@ -10,7 +10,7 @@
         <meta name="description" content="All-in-one Dictionary">
 
         <link href="/static/img/favicon.ico" rel="icon">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"
 
         <!-- https://v5.getbootstrap.com/docs/5.0/getting-started/introduction/ -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -19,13 +19,13 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-dark bg-primary" style="background-color: #6610f2">
+        <!-- <nav class="navbar navbar-dark bg-primary" style="background-color: #6610f2">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/" style="margin: -12px">
                     <img src="{{ url_for('static', filename='img/favicon.png') }}" width="50" height="50" alt="Anki Vocabulary Builder" loading="lazy">
                 </a>
               </div>
-        </nav>
+        </nav> -->
 
         <main>
             {% block main%}{% endblock %}
