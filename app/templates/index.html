@@ -6,10 +6,14 @@
 
 {% block main %}
     <div class="container">
-        <form action="/" method="POST">
+        <form action="/" method="POST" style="display: flex; padding: 70px; text-align: center; align-items: center; justify-content: center;">
             <input type="text" name="word" placeholder="Search Word">
-            <input type="image" name="submit" src="{{ url_for('static', filename='img/search.png') }}" border="0" alt="submit" style="width: 30px; position: absolute; margin-bottom: 20px;">
+            <input type="image" name="submit" src="{{ url_for('static', filename='img/search.png') }}" border="0" alt="submit" style="width: 35px;">
         </form>
     </div>
+
+    {% if request.method == "POST": %}
+        <p>{{ word }}</p>
+    {% endif %}
     
 {% endblock %}
