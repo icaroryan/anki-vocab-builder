@@ -2,13 +2,22 @@ from app import app
 
 from flask import request, render_template, flash, redirect, url_for
 
+from urllib.parse import unquote
+
+import re
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    if request.method == 'GET':
-        return render_template("index.html")
-    
-    else:
-        word = request.form['word']
+    if request.method == "POST":
 
-        return redirect(url_for('index'))
+        word = request.form["word"]
+
+        return redirect(url_for("search", word=word))
         
+    return render_template("index.html")
+    
+
+@app.route('/<word>')
+def search(word):
+
+    return render_template("index.html", word=word)
