@@ -2,9 +2,8 @@ from app import app
 
 from flask import request, render_template, flash, redirect, url_for
 
-from urllib.parse import unquote
-
-import re
+# from urllib.parse import unquote
+# import re
 
 @app.route('/', methods=['POST', 'GET'])
 def index():

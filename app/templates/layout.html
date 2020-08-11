@@ -8,12 +8,18 @@
         <meta name="author" content="Icaro Ryan">
         <meta name="keywords" content="Icaro Ryan, Dictionary, English, Anki, Anki Vocabulary Builder, search">
         <meta name="description" content="All-in-one Dictionary">
+        
 
         <link href="/static/img/favicon.ico" rel="icon">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"
 
         <!-- https://v5.getbootstrap.com/docs/5.0/getting-started/introduction/ -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+        <!-- https://github.com/niutech/x-frame-bypass -->
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+
 
         <title>Anki Vocabulary Builder:{% block title%}{% endblock %}</title>
     </head>
