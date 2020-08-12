@@ -1,0 +1,28 @@
+.tabContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tabButton {
+    background-color: #2cc285;
+    color: white;
+    border: none;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px ;
+    width: calc(100% / 4);
+}
+
+.tabButton:hover {
+    background-color: #77b39b;
+}
+
+.tabContentContainer {
+    width:91.5%; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+

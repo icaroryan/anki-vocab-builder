@@ -13,7 +13,29 @@
     </div>
 
     {% if word %}
-        <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
+
+        <div class="tabContainer">
+            <button class="tabButton">Cambridge Dictionary</button>
+            <button class="tabButton">Longman Dictionary</button>
+
+            
+        </div>
+        
+
+        <div class="tabContentContainer">
+            <div id="cambridge" class="tabContent">
+                <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
+                    <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/dictionary/english/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
+                        <div class="p">Your browser does not support iframes.</div>
+                    </iframe>
+                </div>
+            </div>
+            <div id="longman" class="tabContent">
+                This is Longman
+            </div>
+        </div>
+
+        <!-- <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
             <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/dictionary/english/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
                 <div class="p">Your browser does not support iframes.</div>
             </iframe>
@@ -23,7 +45,7 @@
             <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/dictionary/{{ word }}" title="Longman Dictionary" name="longman" loading="lazy">
                 <div class="p">Your browser does not support iframes.</div>
             </iframe>
-        </div>
+        </div> -->
     {% endif %}
     
 {% endblock %}
