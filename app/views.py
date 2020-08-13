@@ -9,7 +9,7 @@ from flask import request, render_template, flash, redirect, url_for
 def index():
     if request.method == "POST":
 
-        word = request.form["word"]
+        word = request.form["word"].lower()
 
         return redirect(url_for("search", word=word))
         
