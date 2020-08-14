@@ -21,24 +21,60 @@
 
         <div class="tabContainer">
             <div class="tabButtonsContainer">
-                <button class="tabButton">Cambridge Dictionary</button>
-                <button class="tabButton">Longman Dictionary</button>
+                <button class="tabButton" id="cambridge_button">Cambridge Dictionary</button>
+                <button class="tabButton" id="longman_button">Longman Dictionary</button>
+                <button class="tabButton" id="thesaurus_button">Thesaurus</button>
+                <button class="tabButton" id="duckduckgo_button">DuckDuckGo Images</button>
             </div>
             
 
             <div class="tabContentContainer">
-                <div id="cambridge" class="tabContent">
+                <div id="cambridge_embed" class="tabContent">
                     <div class="embed-responsive embed-responsive-21by9">
-                        <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/dictionary/english/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
+                        <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q={{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
             </div>
-            
+
+            <br><br>
+
+            <div class="tabContentContainer">
+                <div id="longman_embed" class="tabContent">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}" title="Longman Dictionary" name="longman" loading="eager">
+                            <div class="p">Your browser does not support iframes.</div>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="tabContentContainer">
+                <div id="thesaurus_embed" class="tabContent">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="https://www.thesaurus.com/browse/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Thesaurus Synonyms" name="thesaurus" loading="lazy">
+                            <div class="p">Your browser does not support iframes.</div>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabContentContainer">
+                <div id="duckduckgo_embed" class="tabContent">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://duckduckgo.com/?q=house&iax=images&ia=images" sandbox="allow-scripts allow-same-origin" title="DuckDuckGo Images" name="duckduckgo" loading="eager">
+                            <div class="p">Your browser does not support iframes.</div>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
-
+        
         
 
         <!-- <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
@@ -46,12 +82,35 @@
                 <div class="p">Your browser does not support iframes.</div>
             </iframe>
         </div>
-        <br>
-        <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
-            <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/dictionary/{{ word }}" title="Longman Dictionary" name="longman" loading="lazy">
+        
+        <div class="tabContentContainer">
+            <div id="longman_embed" class="tabContent">
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}" title="Longman Dictionary" name="longman" loading="lazy">
+                        <div class="p">Your browser does not support iframes.</div>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabContentContainer">
+            <div id="thesaurus_embed" class="tabContent">
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="https://www.thesaurus.com/browse/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Thesaurus Synonyms" name="thesaurus" loading="lazy">
+                        <div class="p">Your browser does not support iframes.</div>
+                    </iframe>
+                </div>
+            </div>
+        </div> -->
+
+
+        
+        <!-- <div class="embed-responsive embed-responsive-21by9" style="width:91.5%; display: block; margin-left: auto; margin-right: auto;">
+            <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}" title="Longman Dictionary" name="longman" loading="lazy">
                 <div class="p">Your browser does not support iframes.</div>
             </iframe>
         </div> -->
+
     {% endif %}
     
 {% endblock %}
