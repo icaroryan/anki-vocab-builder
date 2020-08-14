@@ -36,11 +36,9 @@ body {
     font-size: 16px;
     padding: 10px ;
     
-
-    
 }
 
-.tabButton:hover {
+.active_button, .tabButton:hover {
     background-color: #77b39b;
 }
 
@@ -50,7 +48,16 @@ body {
 
 .tabContentContainer {
     width: 100%; 
+    display: none;
     
+}
+
+.tabContent {
+    display: none;
+}
+
+.active_content {
+    display: block;
 }
 
 
