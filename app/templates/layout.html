@@ -4,7 +4,8 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="author" content="Icaro Ryan">
         <meta name="keywords" content="Icaro Ryan, Dictionary, English, Anki, Anki Vocabulary Builder, search">
         <meta name="description" content="All-in-one Dictionary">
@@ -14,10 +15,11 @@
         <link rel="stylesheet" type="text/css" href="static/css/styles.css">
     
 
-        <!-- https://v5.getbootstrap.com/docs/5.0/getting-started/introduction/ -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-        <!-- https://mdbootstrap.com/ -->
 
         
         <!-- https://github.com/niutech/x-frame-bypass -->
@@ -28,23 +30,20 @@
         <title>Anki Vocabulary Builder:{% block title%}{% endblock %}</title>
     </head>
 
-    <body>
-        <!-- <nav class="navbar navbar-dark bg-primary" style="background-color: #6610f2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/" style="margin: -12px">
-                    <img src="{{ url_for('static', filename='img/favicon.png') }}" width="50" height="50" alt="Anki Vocabulary Builder" loading="lazy">
-                </a>
-              </div>
-        </nav> -->
+    <body class="container">
 
         <main>
             {% block main%}{% endblock %}
         </main>
 
         
-        <footer class="small text-center text-muted">
-            <p>Author: Icaro Ryan<br>
-            <a href="mailto:icaroryan3@gmail.com" class="link-info">icaroryan3@gmail.com</a></p>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <span class="blue-text text-darken-2">Author: Icaro Ryan</span>
+                    <a class="grey-text text-lighten-4 middle" href="mailto:icaroryan3@gmail.com" >icaroryan3@gmail.com</a>
+                </div>s
+            </div>
         </footer>
 
         <script type="text/plain" data-cookiescript="accepted" data-cookiecategory="targeting">
@@ -54,12 +53,11 @@
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-XXXXXXXX-X', 'auto');
             ga('send', 'pageview');
-            </script>
+        </script>
         <!-- Java Script -->
         <script src="{{ url_for('static', filename='js/app.js')}}"></script>
-        <!-- Popper.js first, then Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
 </html>

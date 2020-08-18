@@ -1,9 +1,9 @@
-body {
+/* body { */
     /* https://coolors.co/7400b8-6930c3-5e60ce-5390d9-4ea8de-48bfe3-56cfe1-64dfdf-72efdd-80ffdb */
     /* https://coolors.co/07beb8-3dccc7-68d8d6-9ceaef-c4fff9 */
-    background-color: #64DFDF;
-    text-align: center;
-}
+    /* background-color: #64DFDF;
+    text-align: center; */
+/* } */
 
 .form_search {
     display: flex; 

@@ -15,5 +15,6 @@ function open_page(btn) {
     document.getElementById(btn + "_embed").classList.add("active_content")
     
 }
+
 // Click on the default tab
 document.getElementsByClassName("tabButton")[0].click();
