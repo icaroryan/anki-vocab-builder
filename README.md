@@ -1,3 +1,3 @@
 #All-in-One Dictionary
 
-Super English Dictionarys
+Super English Dictionary
