@@ -10,8 +10,8 @@ main {
     flex: 1 0 auto;
 }
 .form_search {
-    align-items: center; 
-    justify-content: center;
+    width: 10%;
+    background-color: aqua;
 }
 
 .tabContainer {

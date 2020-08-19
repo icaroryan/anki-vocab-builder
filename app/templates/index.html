@@ -8,42 +8,26 @@
 
     {% if not word %}
 
-        <div class="row">
-            <form class="col s12 center" action="/" method="POST">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <i class="material-icons prefix" name="submit">search</i>
-                        <input id="word" type="text" maxlength="45">
-                        <label for="word">Search Word</label>
+        <div class="container" style="width: 25%;">
+            <div class="row">
+                <form class="col s12" action="/" method="POST">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" name="submit">search</i>
+                            <input id="word" name="word" type="text" maxlength="45">
+                            <label for="word" class="">Search Word</label>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-
-        <form class="form_search" action="/" method="POST">
-            <input type="text" name="word" placeholder="Search Word">
-            <!-- <button type="submit" border="0"> -->
-                <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
-            <!-- </button> -->
-            <input type="image" name="submit" src="{{ url_for('static', filename='img/search.png') }}" border="0" alt="submit" width="35px">
-        </form>
+        
 
     {% endif %}
 
     {% if word %}
 
-    <div class="row">
-        <form class="col s12 center" action="/" method="POST">
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="material-icons prefix" name="submit">search</i>
-                    <input id="word" type="text" maxlength="45">
-                    <label for="word">Search Word</label>
-                </div>
-            </div>
-        </form>
-    </div>
-        <div class="tabContainer">
+        <div class="tabContainer container">
             <div class="tabButtonsContainer">
                 <!-- Max nº Buttons = 7 -->
                 <button onClick="open_page(this.id)" class="tabButton" id="cambridge">Cambridge Dictionary</button>
