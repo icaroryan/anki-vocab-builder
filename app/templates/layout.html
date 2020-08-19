@@ -18,7 +18,7 @@
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/materialize.css">
 
 
         
@@ -27,22 +27,21 @@
         <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 
 
-        <title>Anki Vocabulary Builder:{% block title%}{% endblock %}</title>
+        <title>All-in-one Dictionary:{% block title%}{% endblock %}</title>
     </head>
 
-    <body class="container">
+    <body>
 
-        <main>
+        <main class="container">
             {% block main%}{% endblock %}
+            
         </main>
 
-        
         <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    Author: Icaro Ryan
-                    <a class="grey-text text-lighten-4 right" href="mailto:icaroryan3@gmail.com" >icaroryan3@gmail.com</a>
-                </div>s
+                <div class="container center">
+                    Author: Icaro Ryan <br>
+                    <a class="grey-text text-lighten-3" href="mailto:icaroryan3@gmail.com" >icaroryan3@gmail.com</a>
+                </div>
             </div>
         </footer>
 
@@ -58,6 +57,6 @@
         <script src="{{ url_for('static', filename='js/app.js')}}"></script>
 
         <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="static/js/materialize.min.js"></script>
     </body>
 </html>

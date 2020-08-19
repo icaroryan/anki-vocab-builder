@@ -7,6 +7,19 @@
 {% block main %}
 
     {% if not word %}
+
+        <div class="row">
+            <form class="col s12 center" action="/" method="POST">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix" name="submit">search</i>
+                        <input id="word" type="text" maxlength="45">
+                        <label for="word">Search Word</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <form class="form_search" action="/" method="POST">
             <input type="text" name="word" placeholder="Search Word">
             <!-- <button type="submit" border="0"> -->
@@ -18,24 +31,27 @@
     {% endif %}
 
     {% if word %}
-        <form class="form_search" action="/" method="POST">
-            <input type="text" name="word" placeholder="Search Word">
-            <!-- <button type="submit" border="0"> -->
-                <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
-            <!-- </button> -->
-            <input type="image" name="submit" src="{{ url_for('static', filename='img/search.png') }}" border="0" alt="submit" width="35px">
+
+    <div class="row">
+        <form class="col s12 center" action="/" method="POST">
+            <div class="row">
+                <div class="input-field col s4">
+                    <i class="material-icons prefix" name="submit">search</i>
+                    <input id="word" type="text" maxlength="45">
+                    <label for="word">Search Word</label>
+                </div>
+            </div>
         </form>
-
-
+    </div>
         <div class="tabContainer">
             <div class="tabButtonsContainer">
+                <!-- Max nº Buttons = 7 -->
                 <button onClick="open_page(this.id)" class="tabButton" id="cambridge">Cambridge Dictionary</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="longman">Longman Dictionary</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="thesaurus">Thesaurus Synonyms</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="duckduckgo">DuckDuckGo Images</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="sentencedict">Sentence Dictionary</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="macmillan">Macmillan Dictionary</button>
-
                 
             </div>
             
@@ -43,48 +59,48 @@
             <div class="tabContentContainer">
 
                 <div id="cambridge_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q={{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q={{ word }}" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms" title="Cambridge Dictionary" name="cambridge" loading="lazy">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
 
                 <div id="longman_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}" title="Longman Dictionary" name="longman" loading="eager">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}" frameborder="0" title="Longman Dictionary" name="longman" loading="eager">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
 
                 <div id="thesaurus_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe class="embed-responsive-item" src="https://www.thesaurus.com/browse/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Thesaurus Synonyms" name="thesaurus" loading="lazy">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.thesaurus.com/browse/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" frameborder="0" title="Thesaurus Synonyms" name="thesaurus" loading="lazy">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
 
                 <div id="duckduckgo_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://duckduckgo.com/?q={{ word }}&iax=images&ia=images" sandbox="allow-scripts allow-same-origin" title="DuckDuckGo Images" name="duckduckgo" loading="eager">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://duckduckgo.com/?q={{ word }}&iax=images&ia=images" frameborder="0" sandbox="allow-scripts allow-same-origin" title="DuckDuckGo Images" name="duckduckgo" loading="eager">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
 
                 <div id="sentencedict_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe class="embed-responsive-item" src="https://sentencedict.com/" title="Sentence Dictionary" name="sentencedict" loading="lazy">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://sentencedict.com/" frameborder="0" title="Sentence Dictionary" name="sentencedict" loading="lazy">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
                 </div>
 
                 <div id="macmillan_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.macmillandictionary.com/search/british/direct/?q={{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" title="Macmillan Dictionary" name="macmillan" loading="lazy">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://www.macmillandictionary.com/search/british/direct/?q={{ word }}" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms" title="Macmillan Dictionary" name="macmillan" loading="lazy">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
