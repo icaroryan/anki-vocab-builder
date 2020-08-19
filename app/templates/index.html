@@ -9,7 +9,7 @@
     {% if not word %}
 
         <div class="centerContainer">
-            <div class="row" style="width: 50%;">
+            <div class="row form_search">
                 <form class="col s12" action="/" method="POST">
                     <div class="row ">
                         <div class="input-field col s12">
@@ -22,19 +22,24 @@
             </div>
         </div>
         
-        <!-- <div style="position: relative; height: 100%;">
-            <h5 style="width: 50%;
-            height: 50%;
-            overflow: auto;
-            margin: auto;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            border: solid black;">This should be vertically aligned</h5>
-        </div> -->
 
     {% endif %}
 
     {% if word %}
+
+        <div class="container">
+            <div class="row form_search">
+                <form class="col s12" action="/" method="POST">
+                    <div class="row ">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" name="submit">search</i>
+                            <input id="word" name="word" type="text" maxlength="45">
+                            <label for="word" class="">Search Word</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="tabContainer container">
             <div class="tabButtonsContainer">
