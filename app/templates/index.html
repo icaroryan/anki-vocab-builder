@@ -8,10 +8,10 @@
 
     {% if not word %}
 
-        <div class="container" style="width: 25%;">
-            <div class="row">
+        <div class="centerContainer">
+            <div class="row" style="width: 50%;">
                 <form class="col s12" action="/" method="POST">
-                    <div class="row">
+                    <div class="row ">
                         <div class="input-field col s12">
                             <i class="material-icons prefix" name="submit">search</i>
                             <input id="word" name="word" type="text" maxlength="45">
@@ -22,6 +22,15 @@
             </div>
         </div>
         
+        <!-- <div style="position: relative; height: 100%;">
+            <h5 style="width: 50%;
+            height: 50%;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            border: solid black;">This should be vertically aligned</h5>
+        </div> -->
 
     {% endif %}
 
