@@ -8,7 +8,7 @@
 
     {% if not word %}
 
-        <div class="centerContainer">
+        <div class="centerContainer" onload="initialize_elements()">
             <div class="row form_search">
                 <form class="col s12" action="/" method="POST">
                     <div class="row">
@@ -16,17 +16,35 @@
                             <i class="material-icons prefix" name="submit">search</i>
                             <input id="word" name="word" type="text" maxlength="45">
                             <label for="word" class="">Search Word</label>
+                            <i class="material-icons prefix" name="submit">arrow_forward_ios</i>
                         </div>
                     </div>
+
+                    <div class="row" style="display: flex;">
+                        <div class="input-field col s8">
+                            <select multip
+                            le name="dictionaries">
+                                <option value="cambridge">Cambridge Dictionary</option>
+                                <option value="longman">Longman Dictionary</option>
+                                <option value="thesaurus">Thesaurus Synonyms</option>
+                                <option value="duckduckgo">DuckDuckGo Images</option>
+                                <option value="sentencedict">Sentence Dictionary</option>
+                                <option value="macmillan">Macmillan Dictionary</option>
+                            </select>
+                            <label>Select your dictionaries</label>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>
+
+        
         
 
     {% endif %}
 
     {% if word %}
-
         <div class="container" style="width: 50%;">
             <div class="row form_search">
                 <form class="col s12" action="/" method="POST">
@@ -41,7 +59,7 @@
             </div>
         </div>
 
-        <div class="tabContainer container">
+        <div class="tabContainer container" onload="clickOnFistTab()">
             <div class="tabButtonsContainer">
                 <!-- Max nº Buttons = 7 -->
                 <button onClick="open_page(this.id)" class="tabButton" id="cambridge">Cambridge Dictionary</button>

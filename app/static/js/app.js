@@ -16,5 +16,18 @@ function open_page(btn) {
     
 }
 
-// Click on the default tab
-document.getElementsByClassName("tabButton")[0].click();
+function initialize_elements() {
+    // Initialization of elements Materialize
+    M.AutoInit();
+}
+
+function clickOnFistTab() {
+    // Click on the default tab
+    document.getElementsByClassName("tabButton")[0].click();    
+}
+
+// Check if the we're on the tabs session by looking for the existence of tabContainer
+// if (document.getElementsByClassName("tabContainer")) {
+    
+    
+// }
