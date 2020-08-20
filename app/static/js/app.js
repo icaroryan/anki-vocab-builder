@@ -16,15 +16,22 @@ function open_page(btn) {
     
 }
 
-function initialize_elements() {
-    // Initialization of elements Materialize
-    M.AutoInit();
-}
+M.AutoInit();
 
-function clickOnFistTab() {
-    // Click on the default tab
-    document.getElementsByClassName("tabButton")[0].click();    
-}
+// Use the icon as a way to submit
+var form = document.getElementById("form");
+document.getElementById("icon").addEventListener("click", function () {
+    form.submit();
+})
+
+
+
+// Initialization of elements Materialize
+
+
+
+// Click on the default tab
+document.getElementsByClassName("tabButton")[0].click();    
 
 // Check if the we're on the tabs session by looking for the existence of tabContainer
 // if (document.getElementsByClassName("tabContainer")) {

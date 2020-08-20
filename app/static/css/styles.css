@@ -22,6 +22,10 @@ main {
     width: 50%;
 }
 
+#icon {
+    cursor: pointer;
+}
+
 .tabContainer {
     display: flex;
     justify-content: flex-start;
