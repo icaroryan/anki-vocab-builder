@@ -26,6 +26,11 @@ main {
     cursor: pointer;
 }
 
+a #back{
+    color: black;
+    
+}
+
 .tabContainer {
     display: flex;
     justify-content: flex-start;

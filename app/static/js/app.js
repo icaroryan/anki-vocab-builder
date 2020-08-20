@@ -16,7 +16,9 @@ function open_page(btn) {
     
 }
 
+// Initialization of elements Materialize
 M.AutoInit();
+
 
 // Use the icon as a way to submit
 var form = document.getElementById("form");
@@ -25,16 +27,5 @@ document.getElementById("icon").addEventListener("click", function () {
 })
 
 
-
-// Initialization of elements Materialize
-
-
-
 // Click on the default tab
-document.getElementsByClassName("tabButton")[0].click();    
-
-// Check if the we're on the tabs session by looking for the existence of tabContainer
-// if (document.getElementsByClassName("tabContainer")) {
-    
-    
-// }
+document.getElementsByClassName("tabButton")[0].click();

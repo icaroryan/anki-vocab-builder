@@ -8,9 +8,9 @@
 
     {% if not word %}
 
-        <div class="centerContainer" onload="M.AutoInit()">
+        <div class="centerContainer">
             <div class="row form_search">
-                <form class="col s12" id="form" action="/" method="POST">
+                <form class="col s12" id="form" action="/" method="POST" onload="M.AutoInit();">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="word" name="word" type="text" maxlength="45">
@@ -43,9 +43,12 @@
     {% endif %}
 
     {% if word %}
+    
+        <a href="/"><i class="material-icons prefix" id="back">arrow_back_ios</i></a>
+    
         <div class="container" style="width: 50%;">
             <div class="row form_search">
-                <form class="col s12" action="/" method="POST">
+                <form class="col s12" id="form" action="/" method="POST">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="word" name="word" type="text" maxlength="45">
