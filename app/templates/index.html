@@ -10,7 +10,7 @@
 
         <div class="centerContainer">
             <div class="row form_search">
-                <form class="col s12" id="form" action="/" method="POST" onload="M.AutoInit();">
+                <form class="col s12" id="form" action="/" method="POST" onload="M.AutoInit();" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="word" name="word" type="text" maxlength="45">
@@ -21,7 +21,7 @@
 
                     <div class="row" style="display: flex;">
                         <div class="input-field col s8">
-                            <select multiple name="dictionaries">
+                            <select multiple id="dictionaries" name="dictionaries">
                                 <option value="cambridge">Cambridge Dictionary</option>
                                 <option value="longman">Longman Dictionary</option>
                                 <option value="thesaurus">Thesaurus Synonyms</option>
@@ -48,7 +48,7 @@
     
         <div class="container" style="width: 50%;">
             <div class="row form_search">
-                <form class="col s12" id="form" action="/" method="POST">
+                <form class="col s12" id="form" action="/" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="word" name="word" type="text" maxlength="45">
