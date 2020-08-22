@@ -19,7 +19,6 @@ def index():
     if request.method == "POST":
 
         word = request.form["word"].lower()
-
         listDictionaries = request.form.getlist("dictionaries")
 
         return redirect(url_for("search", word=word))

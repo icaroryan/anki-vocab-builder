@@ -13,15 +13,16 @@
                 <form class="col s12" id="form" action="/" method="POST" onload="M.AutoInit();" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="word" name="word" type="text" maxlength="45">
+                            <input id="word" name="word" type="text" maxlength="45" required>
                             <label for="word">Search Word</label>
                             <i class="material-icons prefix" name="submit" id="icon">search</i>
+                            <span class="helper-text" data-error="All fields are required."></span>
                         </div>
                     </div>
 
                     <div class="row" style="display: flex;">
                         <div class="input-field col s8">
-                            <select multiple id="dictionaries" name="dictionaries">
+                            <select multiple id="dictionaries" name="dictionaries" required>
                                 <option value="cambridge">Cambridge Dictionary</option>
                                 <option value="longman">Longman Dictionary</option>
                                 <option value="thesaurus">Thesaurus Synonyms</option>
@@ -32,7 +33,7 @@
                             <label>Select your dictionaries</label>
                         </div>
                     </div>
-
+                    
                 </form>
             </div>
         </div>

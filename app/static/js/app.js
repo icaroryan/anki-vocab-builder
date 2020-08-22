@@ -16,26 +16,66 @@ function open_page(btn) {
     
 }
 
+function validation() {
+    // If it's OK
+    if (input_word.value.length != 0 && input_select.value != "") {
+        form.submit();
+    }
+
+    // If the search bar field is empty
+    if (input_word.value.length == 0) {
+        input_word.classList.add("invalid");
+    }
+    // If not empty
+    else {
+        // If it's with 'invalid' tag, replace it to 'valid', otherwise add the tag 'valid'
+        input_word.classList.contains("invalid") ? input_word.classList.replace("invalid", "valid") : input_word.classList.add("valid");
+    }
+    
+
+    // If the user didn't select any dictionary
+    if (input_select.value == "") {
+        dropdown.classList.add("invalid");
+    }
+    // If the dictionary was selected
+    else {
+        // 'invalid'? replace it to 'valid'. Otherwise add 'valid'
+        dropdown.classList.contains("invalid") ? dropdown.classList.replace("invalid", "valid") : dropdown.classList.add("valid");
+    }
+}
+
 // Initialization of elements Materialize
 M.AutoInit();
 
 
 // Use the icon as a way to submit
 var form = document.getElementById("form");
-document.getElementById("icon").addEventListener("click", function () {
-    form.submit();
+var input_word = document.getElementById("word");
+var dropdown = document.querySelector("input.select-dropdown.dropdown-trigger");
+
+
+input_word.addEventListener("input", function() {
+    if (input_word.value.length != 0 && input_word.classList.contains("invalid")) {
+        input_word.classList.replace("invalid", "valid")
+    }
 })
 
-var input_word = document.getElementById("word");
+
+// input_select.addEventListener("input", function() {
+//     if (input_select.value != "" && dropdown.classList.contains("invalid")) {
+//         dropdown.classList.replace("invalid", "valid")
+//     }
+// })
+
+
+document.getElementById("icon").addEventListener("click", function () {
+    validation()
+})
+
 var input_select = document.getElementById("dictionaries")
 document.addEventListener("keypress", function() {
     if (event.keyCode == 13) {
-        if (input_word.value.length != 0 && input_select.value != "") {
-            form.submit();
-        }
-        else {
-            alert("You should fill all the fields");
-        }
+        validation()
     }
 })
 
