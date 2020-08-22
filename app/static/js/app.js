@@ -26,6 +26,7 @@ document.getElementById("icon").addEventListener("click", function () {
     form.submit();
 })
 
+// Submit by enter key and check if all field are filled up
 var input_word = document.getElementById("word");
 var input_select = document.getElementById("dictionaries")
 document.addEventListener("keypress", function() {
