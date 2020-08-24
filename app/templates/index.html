@@ -9,10 +9,10 @@
     {% if not word %}
         <div class="centerContainer">
             <div class="row form_search">
-                <form class="col s12" id="form" action="/" method="POST" onload="M.AutoInit();" autocomplete="off">
+                <form class="col s12" id="form" action="/" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="word" name="word" type="text" maxlength="45" required>
+                            <input id="word" name="q" type="text" maxlength="45" required>
                             <label for="word">Search Word</label>
                             <i class="material-icons prefix" name="submit" id="icon">search</i>
                             <span class="helper-text" data-error="All fields are required."></span>
@@ -21,11 +21,10 @@
 
                     <div class="row" style="display: flex;">
                         <div class="input-field col s8">
-                            <select multiple id="dictionaries" name="dictionaries" required>
+                            <select multiple id="dictionaries" name="d" required>
                                 <option value="cambridge">Cambridge Dictionary</option>
                                 <option value="longman">Longman Dictionary</option>
                                 <option value="thesaurus">Thesaurus Synonyms</option>
-                                <option value="duckduckgo">DuckDuckGo Images</option>
                                 <option value="sentencedict">Sentence Dictionary</option>
                                 <option value="macmillan">Macmillan Dictionary</option>
                             </select>
@@ -43,15 +42,15 @@
     {% endif %}
 
     {% if word %}
-    
         <a href="/"><i class="material-icons prefix" id="back">arrow_back_ios</i></a>
-    
+
+
         <div class="container" style="width: 50%;">
             <div class="row form_search">
                 <form class="col s12" id="form" action="/" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="word" name="word" type="text" maxlength="45">
+                            <input id="word" name="q" type="text" maxlength="45">
                             <label for="word">Search Word</label>
                             <i class="material-icons prefix" name="submit" id="icon">search</i>
                         </div>
@@ -63,13 +62,16 @@
         <div class="tabContainer container">
             <div class="tabButtonsContainer">
                 <!-- Max nº Buttons = 7 -->
-                <button onClick="open_page(this.id)" class="tabButton" id="cambridge">Cambridge Dictionary</button>
+                {% for dict in dicts %}
+                <button onClick="open_page(this.id)" class="tabButton" id="{{ dict }}">{{ dictionaries[dict]["name"] }}</button>
+
+                <!-- <button onClick="open_page(this.id)" class="tabButton" id="cambridge">Cambridge Dictionary</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="longman">Longman Dictionary</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="thesaurus">Thesaurus Synonyms</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="duckduckgo">DuckDuckGo Images</button>
                 <button onClick="open_page(this.id)" class="tabButton" id="sentencedict">Sentence Dictionary</button>
-                <button onClick="open_page(this.id)" class="tabButton" id="macmillan">Macmillan Dictionary</button>
-                
+                <button onClick="open_page(this.id)" class="tabButton" id="macmillan">Macmillan Dictionary</button> -->
+                {% endfor %}
             </div>
             
 
@@ -94,14 +96,6 @@
                 <div id="thesaurus_embed" class="tabContent">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.thesaurus.com/browse/{{ word }}" sandbox="allow-scripts allow-same-origin allow-forms" frameborder="0" title="Thesaurus Synonyms" name="thesaurus" loading="lazy">
-                            <div class="p">Your browser does not support iframes.</div>
-                        </iframe>
-                    </div>
-                </div>
-
-                <div id="duckduckgo_embed" class="tabContent">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe is="x-frame-bypass" class="embed-responsive-item" src="https://duckduckgo.com/?q={{ word }}&iax=images&ia=images" frameborder="0" sandbox="allow-scripts allow-same-origin" title="DuckDuckGo Images" name="duckduckgo" loading="eager">
                             <div class="p">Your browser does not support iframes.</div>
                         </iframe>
                     </div>
