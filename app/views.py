@@ -30,7 +30,7 @@ def index():
 
         return redirect(url_for("query", word=word))
     else:
-        return render_template("index.html")
+        return render_template("index.html", dictionaries=dictionaries)
     
 
 @app.route('/<word>')

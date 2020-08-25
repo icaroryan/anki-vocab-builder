@@ -22,11 +22,9 @@
                     <div class="row" style="display: flex;">
                         <div class="input-field col s8">
                             <select multiple id="dictionaries" name="d" required>
-                                <option value="cambridge">Cambridge Dictionary</option>
-                                <option value="longman">Longman Dictionary</option>
-                                <option value="thesaurus">Thesaurus Synonyms</option>
-                                <option value="sentencedict">Sentence Dictionary</option>
-                                <option value="macmillan">Macmillan Dictionary</option>
+                                {% for dict in dictionaries.keys() %}
+                                    <option value="{{ dict }}">{{ dictionaries[dict]["name"] }}</option>
+                                {% endfor %}
                             </select>
                             <label>Select your dictionaries</label>
                         </div>
