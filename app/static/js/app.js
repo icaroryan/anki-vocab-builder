@@ -61,12 +61,14 @@ input_word.addEventListener("input", function() {
     }
 })
 
+if (input_select) {
+    input_select.addEventListener("change", function() {
+        if (input_select.value != "" && dropdown.classList.contains("invalid")) {
+            dropdown.classList.replace("invalid", "valid")
+        }
+    })
+}
 
-input_select.addEventListener("change", function() {
-    if (input_select.value != "" && dropdown.classList.contains("invalid")) {
-        dropdown.classList.replace("invalid", "valid")
-    }
-})
 
 
 document.getElementById("icon").addEventListener("click", function () {
