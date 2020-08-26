@@ -1,33 +1,43 @@
 from app import app
 
-from flask import request, render_template, flash, redirect, url_for
+from flask import request, render_template, flash, redirect, url_for, session
+# from datetime import timedelta
 
 # from urllib.parse import unquote
 # import re
 
-dictionaries = [
-    {'name': 'Cambridge Dictionary', 'id': 'cambridge', 'url': 'https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q={{ word }}', 'x-frame-bypass': False},
-    {'name': 'Longman Dictionary', 'id': 'longman', 'url': 'https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}', 'x-frame-bypass': True},
-    {'name': 'Thesaurus Synonyms', 'id': 'thesaurus', 'url': 'https://www.thesaurus.com/browse/{{ word }}', 'x-frame-bypass': False},
-    {'name': 'DuckDuckGo Images', 'id': 'duckduckgo', 'url': 'https://duckduckgo.com/?q={{ word }}&iax=images&ia=images', 'x-frame-bypass': True},
-    {'name': 'Sentence Dictionary', 'id': 'sentencedict', 'url': 'https://sentencedict.com/', 'x-frame-bypass': False},
-    {'name': 'Macmillan Dictionary', 'id': 'macmillan', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q={{ word }}', 'x-frame-bypass': True}
-]
+app.secret_key = "40e101c7a8b521dffa02b4df"
+# app.permanent_session_lifetime = timedelta(days=5)
+
+
+dictionaries = {
+    "cambridge" : {'name': 'Cambridge Dictionary', 'url': 'https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': False},
+    "longman" : {'name': 'Longman Dictionary', 'url': 'https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': True},
+    "thesaurus" : {'name': 'Thesaurus Synonyms', 'url': 'https://www.thesaurus.com/browse/word_x', 'x-frame-bypass': False},
+    "sentencedict" : {'name': 'Sentence Dictionary', 'url': 'https://sentencedict.com/', 'x-frame-bypass': False},
+    "macmillan" : {'name': 'Macmillan Dictionary', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q=word_x', 'x-frame-bypass': True}
+}
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == "POST":
+        word = request.form["q"].lower()
 
-        word = request.form["word"].lower()
-        listDictionaries = request.form.getlist("dictionaries")
+        dicts = request.form.getlist("d")
 
+        if dicts:
+            session["dicts"] = dicts
 
-        return redirect(url_for("search", word=word, dicts=listDictionaries))
-        
-    return render_template("index.html")
+        return redirect(url_for("query", word=word))
+    else:
+        return render_template("index.html", dictionaries=dictionaries)
     
 
 @app.route('/<word>')
-def search(word):
+def query(word):
+    if "dicts" in session:
+        dicts = session["dicts"]
 
-    return render_template("index.html", word=word)
+        return render_template("index.html", word=word, dicts=dicts, dictionaries=dictionaries)
+    else:
+        return redirect(url_for("index"))
