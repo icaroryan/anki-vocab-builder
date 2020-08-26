@@ -11,11 +11,11 @@ app.secret_key = "40e101c7a8b521dffa02b4df"
 
 
 dictionaries = {
-    "cambridge" : {'name': 'Cambridge Dictionary', 'url': 'https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q={{ word }}', 'x-frame-bypass': False},
-    "longman" : {'name': 'Longman Dictionary', 'url': 'https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q={{ word }}', 'x-frame-bypass': True},
-    "thesaurus" : {'name': 'Thesaurus Synonyms', 'url': 'https://www.thesaurus.com/browse/{{ word }}', 'x-frame-bypass': False},
+    "cambridge" : {'name': 'Cambridge Dictionary', 'url': 'https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': False},
+    "longman" : {'name': 'Longman Dictionary', 'url': 'https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': True},
+    "thesaurus" : {'name': 'Thesaurus Synonyms', 'url': 'https://www.thesaurus.com/browse/word_x', 'x-frame-bypass': False},
     "sentencedict" : {'name': 'Sentence Dictionary', 'url': 'https://sentencedict.com/', 'x-frame-bypass': False},
-    "macmillan" : {'name': 'Macmillan Dictionary', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q={{ word }}', 'x-frame-bypass': True}
+    "macmillan" : {'name': 'Macmillan Dictionary', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q=word_x', 'x-frame-bypass': True}
 }
 
 @app.route('/', methods=['POST', 'GET'])
@@ -24,9 +24,9 @@ def index():
         word = request.form["q"].lower()
 
         dicts = request.form.getlist("d")
-        session["dicts"] = dicts
 
-        # return render_template("index.html", word=word, dicts=dicts)
+        if dicts:
+            session["dicts"] = dicts
 
         return redirect(url_for("query", word=word))
     else:
