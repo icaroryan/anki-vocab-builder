@@ -52,6 +52,7 @@ M.AutoInit();
 var form = document.getElementById("form");
 var input_word = document.getElementById("word");
 var dropdown = document.querySelector("input.select-dropdown.dropdown-trigger");
+var input_select = document.getElementById("dictionaries");
 
 
 input_word.addEventListener("input", function() {
@@ -61,18 +62,17 @@ input_word.addEventListener("input", function() {
 })
 
 
-// input_select.addEventListener("input", function() {
-//     if (input_select.value != "" && dropdown.classList.contains("invalid")) {
-//         dropdown.classList.replace("invalid", "valid")
-//     }
-// })
+input_select.addEventListener("change", function() {
+    if (input_select.value != "" && dropdown.classList.contains("invalid")) {
+        dropdown.classList.replace("invalid", "valid")
+    }
+})
 
 
 document.getElementById("icon").addEventListener("click", function () {
     validation()
 })
 
-var input_select = document.getElementById("dictionaries")
 document.addEventListener("keypress", function() {
     if (event.keyCode == 13) {
         validation()
