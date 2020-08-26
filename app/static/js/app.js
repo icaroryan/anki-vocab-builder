@@ -17,31 +17,46 @@ function open_page(btn) {
 }
 
 function validation() {
-    // If it's OK
-    if (input_word.value.length != 0 && input_select.value != "") {
-        form.submit();
+    // If the select field exists
+    if (input_select){
+
+        // If it's OK
+        if (input_word.value.length != 0 && input_select.value != "") {
+            form.submit();
+        }
+
+        // If the search bar field is empty
+        if (input_word.value.length == 0) {
+            input_word.classList.add("invalid");
+        }
+
+        // If not empty
+        else {
+            // If it's with 'invalid' tag, replace it to 'valid', otherwise add the tag 'valid'
+            input_word.classList.contains("invalid") ? input_word.classList.replace("invalid", "valid") : input_word.classList.add("valid");
+        }
+
+        // If the user didn't select any dictionary
+        if (input_select.value == "") {
+            dropdown.classList.add("invalid");
+        }
+
+        // If the dictionary was selected
+        else {
+            // 'invalid'? replace it to 'valid'. Otherwise add 'valid'
+            dropdown.classList.contains("invalid") ? dropdown.classList.replace("invalid", "valid") : dropdown.classList.add("valid");
+        }
     }
 
-    // If the search bar field is empty
-    if (input_word.value.length == 0) {
-        input_word.classList.add("invalid");
-    }
-    // If not empty
+    // If there's no select field
     else {
-        // If it's with 'invalid' tag, replace it to 'valid', otherwise add the tag 'valid'
-        input_word.classList.contains("invalid") ? input_word.classList.replace("invalid", "valid") : input_word.classList.add("valid");
+        if (input_word.value.length != 0) {
+            form.submit();
+        }
     }
     
 
-    // If the user didn't select any dictionary
-    if (input_select.value == "") {
-        dropdown.classList.add("invalid");
-    }
-    // If the dictionary was selected
-    else {
-        // 'invalid'? replace it to 'valid'. Otherwise add 'valid'
-        dropdown.classList.contains("invalid") ? dropdown.classList.replace("invalid", "valid") : dropdown.classList.add("valid");
-    }
+    
 }
 
 // Initialization of elements Materialize
@@ -55,12 +70,15 @@ var dropdown = document.querySelector("input.select-dropdown.dropdown-trigger");
 var input_select = document.getElementById("dictionaries");
 
 
+// In case it's red, change it to green when the user changes the input
 input_word.addEventListener("input", function() {
     if (input_word.value.length != 0 && input_word.classList.contains("invalid")) {
         input_word.classList.replace("invalid", "valid")
     }
 })
 
+
+// In case it's red, change it to green when the user changes the input
 if (input_select) {
     input_select.addEventListener("change", function() {
         if (input_select.value != "" && dropdown.classList.contains("invalid")) {
@@ -70,11 +88,12 @@ if (input_select) {
 }
 
 
-
+// Submit the form by clicking in the icon
 document.getElementById("icon").addEventListener("click", function () {
     validation()
 })
 
+// Submit the form by pressing enter
 document.addEventListener("keypress", function() {
     if (event.keyCode == 13) {
         validation()
