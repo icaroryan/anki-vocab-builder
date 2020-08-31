@@ -45,7 +45,7 @@ a #back{
     display: block;
 }
 
-.tabButton {
+/* .tabButton {
     background-color: #2cc285;
     color: white;
     border: none;
@@ -55,15 +55,11 @@ a #back{
     font-size: 16px;
     padding: 10px ;
     
-}
-
-.active_button, .tabButton:hover {
-    background-color: #77b39b;
-}
-
-/* .tabButton .active {
-    background-color: aqua;
 } */
+
+.active_button {
+    filter: brightness(120%);
+}
 
 .tabContentContainer {
     width: 100%;
