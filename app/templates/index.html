@@ -58,10 +58,9 @@
 
         <div class="tabContainer container">
 
-            <div class="tabButtonsContainer">
+            <div class="tabButtonsContainer" style="font-size: 0;">
                 <!-- Max nº Buttons = 7 -->
                 {% for dict in dicts %}
-                    <!-- <button onClick="open_page(this.id)" class="tabButton" id="{{ dict }}">{{ dictionaries[dict]["name"] }}</button> -->
                     <a onClick="open_page(this.id)" class="waves-effect waves-light btn-small tabButton" id="{{ dict }}">{{ dictionaries[dict]["name"] }}</a>
                 {% endfor %}
             </div>
