@@ -69,11 +69,12 @@
                 {% for dict in dicts %}
                     <div id="{{ dict }}_embed" class="tabContent">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe {% if dictionaries[dict]['x-frame-bypass'] == True %} is="x-frame-bypass" loading="eager" {% endif %} 
+                            <iframe {% if dictionaries[dict]['x-frame-bypass'] == True %} is="x-frame-bypass" loading="eager" {% endif %}
+                            {% if dictionaries[dict]['onload'] != None %} onload="{{ dictionaries[dict]['onload'] }}('{{ word }}')" {% endif %}
                             class="embed-responsive-item" src="{{ dictionaries[dict]['url'].replace('word_x', word) }}" frameborder="0" 
                             sandbox="allow-scripts allow-same-origin allow-forms" 
                             {% if dictionaries[dict]['x-frame-bypass'] == False %} loading="lazy" {% endif %} 
-                            title="{{ dictionaries[dict]['name'] }}" name="{{ dict }}">
+                            title="{{ dictionaries[dict]['name'] }}" name="{{ dict }}" id="{{ dict }}">
                                 <div class="p">Your browser does not support iframes.</div>
                             </iframe>
                         </div>
