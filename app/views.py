@@ -16,6 +16,10 @@ dictionaries = {
     "thesaurus" : {'name': 'Thesaurus Synonyms', 'url': 'https://www.thesaurus.com/browse/word_x', 'x-frame-bypass': False},
     "sentencedict" : {'name': 'Sentence Dictionary', 'url': 'https://sentencedict.com/', 'x-frame-bypass': False},
     "macmillan" : {'name': 'Macmillan Dictionary', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q=word_x', 'x-frame-bypass': True}
+    # https://translate.google.com/
+    # https://www.google.com/imghp?hl=en
+    # https://context.reverso.net/translation/english-portuguese/
+    # https://michaelis.uol.com.br/moderno-ingles/
 }
 
 @app.route('/', methods=['POST', 'GET'])
