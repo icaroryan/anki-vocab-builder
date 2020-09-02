@@ -54,9 +54,6 @@ function validation() {
             form.submit();
         }
     }
-    
-
-    
 }
 
 // Initialization of elements Materialize
