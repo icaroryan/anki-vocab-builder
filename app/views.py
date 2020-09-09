@@ -14,7 +14,7 @@ dictionaries = {
     "cambridge" : {'name': 'Cambridge Dictionary', 'url': 'https://dictionary.cambridge.org/us/search/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': False},
     "longman" : {'name': 'Longman Dictionary', 'url': 'https://www.ldoceonline.com/search/english/direct/?datasetsearch=english&q=word_x', 'x-frame-bypass': True},
     "thesaurus" : {'name': 'Thesaurus Synonyms', 'url': 'https://www.thesaurus.com/browse/word_x', 'x-frame-bypass': False},
-    "sentencedict" : {'name': 'Sentence Dictionary', 'url': 'https://sentencedict.com/', 'x-frame-bypass': False},
+    "sentencedict" : {'name': 'Sentence Dictionary', 'url': 'https://sentencedict.com/word_x.html', 'x-frame-bypass': False},
     "macmillan" : {'name': 'Macmillan Dictionary', 'url': 'https://www.macmillandictionary.com/search/british/direct/?q=word_x', 'x-frame-bypass': True}
 }
 
