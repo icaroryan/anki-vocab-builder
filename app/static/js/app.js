@@ -54,10 +54,17 @@ function validation() {
             form.submit();
         }
     }
-    
-
-    
 }
+
+function google_search_engine(word) {
+    // Automatically fill up the field with the word and click on the search button
+    var iframe = document.querySelector("iframe#gimages");
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    doc.getElementById("gsc-i-id1").value = word;
+    doc.querySelector("button.gsc-search-button.gsc-search-button-v2").click()
+
+}
+
 
 // Initialization of elements Materialize
 M.AutoInit();

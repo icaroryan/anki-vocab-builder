@@ -12,7 +12,7 @@
                 <form class="col s12" id="form" action="/" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="word" name="q" type="text" maxlength="45" required>
+                            <input id="word" name="q" type="text" maxlength="45" required autofocus>
                             <label for="word">Search Word</label>
                             <i class="material-icons prefix" name="submit" id="icon">search</i>
                         </div>
@@ -58,10 +58,9 @@
 
         <div class="tabContainer container">
 
-            <div class="tabButtonsContainer">
+            <div class="tabButtonsContainer" style="font-size: 0;">
                 <!-- Max nº Buttons = 7 -->
                 {% for dict in dicts %}
-                    <!-- <button onClick="open_page(this.id)" class="tabButton" id="{{ dict }}">{{ dictionaries[dict]["name"] }}</button> -->
                     <a onClick="open_page(this.id)" class="waves-effect waves-light btn-small tabButton" id="{{ dict }}">{{ dictionaries[dict]["name"] }}</a>
                 {% endfor %}
             </div>
@@ -70,11 +69,12 @@
                 {% for dict in dicts %}
                     <div id="{{ dict }}_embed" class="tabContent">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe {% if dictionaries[dict]['x-frame-bypass'] == True %} is="x-frame-bypass" loading="eager" {% endif %} 
+                            <iframe {% if dictionaries[dict]['x-frame-bypass'] == True %} is="x-frame-bypass" loading="eager" {% endif %}
+                            {% if dictionaries[dict]['onload'] != None %} onload="{{ dictionaries[dict]['onload'] }}('{{ word }}')" {% endif %}
                             class="embed-responsive-item" src="{{ dictionaries[dict]['url'].replace('word_x', word) }}" frameborder="0" 
                             sandbox="allow-scripts allow-same-origin allow-forms" 
                             {% if dictionaries[dict]['x-frame-bypass'] == False %} loading="lazy" {% endif %} 
-                            title="{{ dictionaries[dict]['name'] }}" name="{{ dict }}">
+                            title="{{ dictionaries[dict]['name'] }}" name="{{ dict }}" id="{{ dict }}">
                                 <div class="p">Your browser does not support iframes.</div>
                             </iframe>
                         </div>
