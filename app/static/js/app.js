@@ -65,11 +65,6 @@ function google_search_engine(word) {
 
 }
 
-function sentence_search_engine(word) {
-    var iframe = document.querySelector("iframe#sentencedict");
-    var doc = iframe.contentDocument || iframe.contentWindow.document;
-}
-
 
 // Initialization of elements Materialize
 M.AutoInit();
